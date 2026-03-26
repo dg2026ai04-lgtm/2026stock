@@ -2,7 +2,7 @@
 import streamlit as st
 import yfinance as yf
 import pandas as pd
-import matplotlib.pyplot as plt
+# matplStreamlit 기본 차트 사용)
 
 st.set_page_config(page_title="Stock Comparison", layout="wide")
 
@@ -68,12 +68,7 @@ returns = (data / data.iloc[0] - 1) * 100
 
 st.subheader("📈 수익률 비교 (%)")
 
-fig, ax = plt.subplots()
-returns.plot(ax=ax)
-ax.set_ylabel("수익률 (%)")
-ax.grid(True)
-
-st.pyplot(fig)
+st.line_chart(returns)
 
 # 개별 통계
 st.subheader("📊 요약")
